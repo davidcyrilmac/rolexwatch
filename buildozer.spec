@@ -10,7 +10,7 @@ package.name = rolexwatch
 package.domain = org.cyril
 
 # (str) Source code where the main.py lives
-source.dir = .
+source.dir = C:/Users/Cyril/PycharmProjects/PycharmProject
 
 # (list) Source files to include (leave empty to include all)
 source.include_exts = py,png,jpg,kv,atlas
