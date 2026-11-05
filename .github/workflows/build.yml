@@ -5,19 +5,36 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-android:
-    name: Build for Android
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-24.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer
+      - uses: actions/setup-java@v4
         with:
-          workdir: .
-          buildozer_version: stable
+          distribution: temurin
+          java-version: "17"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git zip unzip autoconf libtool pkg-config \
+            zlib1g-dev libncurses-dev cmake libffi-dev libssl-dev build-essential ccache
+
+      - name: Install Buildozer
+        run: pip install --upgrade pip buildozer cython virtualenv
+
+      - name: Build debug APK
+        run: buildozer -v android debug
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rolex-apk
+          path: bin/*.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
