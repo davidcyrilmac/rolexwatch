@@ -18,8 +18,8 @@ source.include_exts = py,png,jpg,kv,atlas
 # (str) Application versioning
 version = 0.1
 
-# (list) Application requirements (pinned to versions known to work together)
-requirements = python3==3.11.5,hostpython3==3.11.5,kivy==2.3.0
+# (list) Application requirements (Kivy 2.3.1 compiles with the current Android NDK)
+requirements = python3==3.11.5,hostpython3==3.11.5,kivy==2.3.1
 
 # (str) Supported orientation (landscape, sensorLandscape, portrait or all)
 orientation = portrait
