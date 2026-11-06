@@ -1,5 +1,7 @@
 [app]
 android.accept_sdk_license = True
+android.ant_path = /usr/share/ant
+android.accept_sdk_license = True
 # (str) Title of your application
 title = Rolex Day-Date-Month
 
