@@ -216,12 +216,13 @@ class RolexFace(Widget):
                        bold=True,
                        angle=(-ang if RADIAL_NUMERALS else 0.0))
 
-        # ---------- brand text ----------
-        self._text(layer, "The Highlander", cx, cy + R * 0.34, R * 0.080, GOLD_DARK)
+               # ---------- brand text ----------
+        self._text(layer, "Thehighlander", cx, cy + R * 0.34, R * 0.085, GOLD_DARK)
         self._text(layer, "WILLIAM COOPER", cx, cy + R * 0.245, R * 0.046, TEXT_SOFT)
-       self._text(layer, "ANNANDALE, LITTLE POND, HOWE BAY", cx, cy - R * 0.255, R * 0.040, TEXT_SOFT)
-        self._text(layer, "BY DAVID CYRIL MACDONALD", cx, cy - R * 0.310, R * 0.040, TEXT_SOFT)
-
+        self._text(layer, "ANNANDALE, LITTLE POND, HOWE BAY", cx, cy - R * 0.255,
+                   R * 0.040, TEXT_SOFT)
+        self._text(layer, "BY DAVID CYRIL MACDONALD", cx, cy - R * 0.310,
+                   R * 0.040, TEXT_SOFT)
     # ------------------------------------------------------------------
     # day / date / month windows
     # ------------------------------------------------------------------
